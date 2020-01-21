@@ -1,6 +1,6 @@
 {
-  "short_name": "React Chess",
-  "name": "React Chess",
+  "short_name": "Chess",
+  "name": "Chess",
   "icons": [
     {
       "src": "favicon.ico",
