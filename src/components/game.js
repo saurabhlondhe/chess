@@ -15,8 +15,29 @@ export default class Game extends React.Component {
       player: 1,
       sourceSelection: -1,
       status: "",
-      turn: "white"
+      turn: "white",
+      time: {
+        white: 0,
+        black: 0
+      }
     };
+    setInterval(() => {
+      if (this.state.turn === "white") {
+        this.setState({
+          time: {
+            white: this.state.time.white + 1,
+            black: this.state.time.black
+          }
+        });
+      } else {
+        this.setState({
+          time: {
+            white: this.state.time.white,
+            black: this.state.time.black + 1
+          }
+        });
+      }
+    }, 1000);
   }
 
   handleClick(i) {
@@ -72,9 +93,8 @@ export default class Game extends React.Component {
               blackFallenSoldiers.push(squares[i]);
             }
           }
-
+          console.log(squares);
           squares[i] = squares[this.state.sourceSelection];
-          console.log(i);
           squares[this.state.sourceSelection] = null;
           let player = this.state.player === 1 ? 2 : 1;
           let turn = this.state.turn === "white" ? "black" : "white";
@@ -119,6 +139,7 @@ export default class Game extends React.Component {
         <h1 style={{ color: this.state.turn }} className="header">
           Chess
         </h1>
+
         <div className="game">
           <div className="game-board">
             <Board
@@ -136,7 +157,12 @@ export default class Game extends React.Component {
           }
         </div>
         <div className="game-status">{this.state.status}</div>
-        <div className={"player-turn-box " + this.state.turn}></div>
+        <div className={"player-turn-box " + this.state.turn}>
+          <h2>
+            white: {this.state.time.white} sec, black :{this.state.time.black}{" "}
+            sec
+          </h2>
+        </div>
       </div>
     );
   }

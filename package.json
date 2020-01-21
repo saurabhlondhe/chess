@@ -1,6 +1,7 @@
 {
   "name": "react-chess",
   "version": "0.1.0",
+  "homepage": "./",
   "private": true,
   "dependencies": {
     "gh-pages": "^1.0.0",
@@ -9,7 +10,7 @@
     "react-scripts": "1.0.10"
   },
   "scripts": {
-    "predeploy": "npm run build",
+    "prod-build": "npm run build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
