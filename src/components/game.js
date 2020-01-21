@@ -116,7 +116,9 @@ export default class Game extends React.Component {
   render() {
     return (
       <div>
-        <div className={"player-turn-box " + this.state.turn}></div>
+        <h1 style={{ color: this.state.turn }} className="header">
+          Chess
+        </h1>
         <div className="game">
           <div className="game-board">
             <Board
@@ -134,6 +136,7 @@ export default class Game extends React.Component {
           }
         </div>
         <div className="game-status">{this.state.status}</div>
+        <div className={"player-turn-box " + this.state.turn}></div>
       </div>
     );
   }
