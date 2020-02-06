@@ -1,5 +1,6 @@
-export default class Piece {
-  constructor(player, iconUrl) {
+class Piece {
+  constructor(name, player, iconUrl) {
+    this.name = name;
     this.player = player;
     this.style = {
       backgroundImage: "url('" + iconUrl + "')",
@@ -8,3 +9,4 @@ export default class Piece {
     };
   }
 }
+export default Piece;

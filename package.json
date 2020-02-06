@@ -4,10 +4,15 @@
   "homepage": "./",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.9.1",
+    "@material-ui/icons": "^4.9.1",
+    "@material-ui/lab": "^4.0.0-alpha.41",
+    "axios": "^0.19.2",
     "gh-pages": "^1.0.0",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "react-scripts": "1.0.10"
+    "react": "^16.3.3",
+    "react-dom": "^16.3.3",
+    "react-scripts": "1.0.10",
+    "socket.io-client": "^2.3.0"
   },
   "scripts": {
     "prod-build": "npm run build",

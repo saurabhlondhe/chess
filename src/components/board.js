@@ -3,19 +3,19 @@ import React from "react";
 import "../index.css";
 import Square from "./square.js";
 
-export default class Board extends React.Component {
-  renderSquare(i, squareShade) {
+class Board extends React.Component {
+  renderSquare = (i, squareShade) => {
     return (
       <Square
-        key={i}
+        isMyTurn={this.props.isMyTurn}
         style={this.props.squares[i] ? this.props.squares[i].style : null}
         shade={squareShade}
         onClick={() => this.props.onClick(i)}
       />
     );
-  }
+  };
 
-  render() {
+  render = () => {
     const board = [];
     for (let i = 0; i < 8; i++) {
       const squareRows = [];
@@ -30,9 +30,11 @@ export default class Board extends React.Component {
     }
 
     return <div>{board}</div>;
-  }
+  };
 }
 
-function isEven(num) {
+const isEven = num => {
   return num % 2 === 0;
-}
+};
+
+export default Board;

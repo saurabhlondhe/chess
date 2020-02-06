@@ -3,14 +3,12 @@ import React from "react";
 import "../index.css";
 import Square from "./square.js";
 
-export default class FallenSoldierBlock extends React.Component {
-  renderSquare(square, i, squareShade) {
-    console.log(i);
-
+class FallenSoldierBlock extends React.Component {
+  renderSquare = (square, i, squareShade) => {
     return <Square key={square + i} piece={square} style={square.style} />;
-  }
+  };
 
-  render() {
+  render = () => {
     return (
       <div>
         <div className="board-row">
@@ -25,5 +23,7 @@ export default class FallenSoldierBlock extends React.Component {
         </div>
       </div>
     );
-  }
+  };
 }
+
+export default FallenSoldierBlock;

@@ -1,0 +1,5 @@
+.floatingButton {
+  float: right;
+  margin-right: 10px !important;
+  bottom: 10px;
+}
